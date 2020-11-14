@@ -19,15 +19,15 @@ class Home extends StatelessWidget {
         itemBuilder: (ctx, i) => UserTile(user: users.byIndex(i)),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          users.put(User(
-            name: 'Teste',
-            email: 'teste@teste.com',
-            avatarUrl: '',
-          ));
-        },
-      ),
+          child: Icon(Icons.add),
+          onPressed: () {
+            users.put(User(
+              id: '20',
+              name: 'Vinicius',
+              email: 'bla@bla',
+              avatarUrl: '',
+            ));
+          }),
     );
   }
 }
