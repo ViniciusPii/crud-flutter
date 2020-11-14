@@ -2,6 +2,7 @@ import 'package:crud/src/components/user_tile.dart';
 import 'package:crud/src/data/dummy_users.dart';
 import 'package:crud/src/models/user.dart';
 import 'package:crud/src/provider/users.dart';
+import 'package:crud/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,15 +20,13 @@ class Home extends StatelessWidget {
         itemBuilder: (ctx, i) => UserTile(user: users.byIndex(i)),
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            users.put(User(
-              id: '20',
-              name: 'Vinicius',
-              email: 'bla@bla',
-              avatarUrl: '',
-            ));
-          }),
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context).pushNamed(
+            AppRoutes.USER_FORM,
+          );
+        },
+      ),
     );
   }
 }
