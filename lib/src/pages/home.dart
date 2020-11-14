@@ -1,5 +1,6 @@
 import 'package:crud/src/components/user_tile.dart';
 import 'package:crud/src/data/dummy_users.dart';
+import 'package:crud/src/models/user.dart';
 import 'package:crud/src/provider/users.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,13 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          users.put(User(
+            name: 'Teste',
+            email: 'teste@teste.com',
+            avatarUrl: '',
+          ));
+        },
       ),
     );
   }
